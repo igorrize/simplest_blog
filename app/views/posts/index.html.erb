@@ -1,0 +1,14 @@
+<div id="posts">
+  <% if @posts.size.zero? %>
+    <div class="no_posts">
+      No posts have been published.
+    </div>
+  <% else %>
+    <%= render @posts %>
+  <% end %>
+      <% if logged_in? %>
+      <span class="upvote-link">
+        <%= link_to "upvote (#{link.upvotes})", upvote_link_path(link), method: :post %>
+      </span>
+
+</div>
